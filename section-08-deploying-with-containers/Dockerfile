@@ -17,7 +17,7 @@ WORKDIR /opt/deploying-machine-learning-models/section-08-deploying-with-contain
 #RUN git pull
 RUN git checkout mscd_janeth
 
-WORKDIR /opt/deploying-machine-learning-models/section-08-deploying-with-containers/house-prices-api/house-prices-api
+WORKDIR /opt/deploying-machine-learning-models/section-08-deploying-with-containers/house-prices-api
 RUN pip install --upgrade pip
 RUN pip install -r /opt/deploying-machine-learning-models/section-08-deploying-with-containers/house-prices-api/requirements.txt
 
