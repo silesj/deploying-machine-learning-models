@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+
+    stage{
+        stage('Checkout...'){
+            steps{
+                echo "Checkout code..."
+            }
+        }
+
+        stage('Hello'){
+            steps{
+                sh "python section-08-deploying-with-containers/hello.py"
+            }
+        }
+
+        stage('Build'){
+            steps{
+                echo "Deploying to test env..."
+                //sh "python section-05-production-model-package/regression_model/train_pipeline.py "
+                sh "pytest test/"
+            }
+        }
+
+        stage("Deploying to prod"){
+            steps{
+                echo "Deploying to prod env..."
+            }
+        }
+    }
+}
